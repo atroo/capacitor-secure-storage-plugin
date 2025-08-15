@@ -58,18 +58,18 @@ Then update the wrapper:
 
 <docgen-index>
 
-- [`setStorageAdapter(...)`](#setstorageadapter)
-- [`getStorageAdapter()`](#getstorageadapter)
-- [`get(...)`](#get)
-- [`getAccessibility(...)`](#getaccessibility)
-- [`set(...)`](#set)
-- [`remove(...)`](#remove)
-- [`clear()`](#clear)
-- [`keys()`](#keys)
-- [`getPlatform()`](#getplatform)
-- [Interfaces](#interfaces)
-- [Type Aliases](#type-aliases)
-- [Enums](#enums)
+* [`setStorageAdapter(...)`](#setstorageadapter)
+* [`getStorageAdapter()`](#getstorageadapter)
+* [`get(...)`](#get)
+* [`getAccessibility(...)`](#getaccessibility)
+* [`set(...)`](#set)
+* [`remove(...)`](#remove)
+* [`clear()`](#clear)
+* [`keys()`](#keys)
+* [`getPlatform()`](#getplatform)
+* [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -92,7 +92,8 @@ gets the value for the given key
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### getStorageAdapter()
 
@@ -104,7 +105,8 @@ gets the current storage adapter or null
 
 **Returns:** <code>Promise&lt;{ adapter: <a href="#webstorageadapter">WebStorageAdapter</a>; }&gt;</code>
 
----
+--------------------
+
 
 ### get(...)
 
@@ -120,7 +122,8 @@ gets the value for the given key
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
----
+--------------------
+
 
 ### getAccessibility(...)
 
@@ -136,7 +139,8 @@ gets the accessibility for the given key
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
----
+--------------------
+
 
 ### set(...)
 
@@ -152,7 +156,8 @@ sets the value for the given key
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### remove(...)
 
@@ -168,7 +173,8 @@ removes the value for the given key
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### clear()
 
@@ -180,7 +186,8 @@ clears all values
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### keys()
 
@@ -192,7 +199,8 @@ gets all keys
 
 **Returns:** <code>Promise&lt;{ value: string[]; }&gt;</code>
 
----
+--------------------
+
 
 ### getPlatform()
 
@@ -204,9 +212,11 @@ gets the platform
 
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### SetDataOptions
 
@@ -218,7 +228,9 @@ allows to define how properties can be accessed on iOS
 | **`value`**         | <code>string</code>                                     |
 | **`accessibility`** | <code><a href="#accessibility">Accessibility</a></code> |
 
+
 ### Type Aliases
+
 
 #### Accessibility
 
@@ -226,7 +238,9 @@ allows to define how properties can be accessed on iOS
 
 <code>'afterFirstUnlock' | 'afterFirstUnlockThisDeviceOnly' | 'whenUnlocked' | 'whenUnlockedThisDeviceOnly' | 'always' | 'alwaysThisDeviceOnly' | 'whenPasscodeSetThisDeviceOnly'</code>
 
+
 ### Enums
+
 
 #### WebStorageAdapter
 
