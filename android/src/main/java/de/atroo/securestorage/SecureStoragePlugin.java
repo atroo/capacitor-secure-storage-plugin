@@ -6,11 +6,11 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
 import org.json.JSONException;
 
 @CapacitorPlugin(name = "SecureStoragePlugin")
 public class SecureStoragePlugin extends Plugin {
+
     private static final String PREFERENCE_FILE = "cap_sec";
     private static final String ENCRYPTED_PREFERENCE_FILE = "cap_sec_enc";
     private SecureStorageImpl secureStorageImpl;

@@ -12,13 +12,13 @@ struct TmpValues: Codable {
     var key: String
     var value: String
     var accessibility: Accessibility
-    
+
     init(key: String, value: String, accessibility: Accessibility) {
         self.key = key
         self.value = value
         self.accessibility = accessibility
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case key
         case value
