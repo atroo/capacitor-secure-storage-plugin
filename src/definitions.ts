@@ -1,7 +1,14 @@
 /**
  * allows to define how properties can be accessed on iOS
  */
-export type Accessibility = 'afterFirstUnlock' | 'afterFirstUnlockThisDeviceOnly' | 'whenUnlocked' | 'whenUnlockedThisDeviceOnly' | 'always' | 'alwaysThisDeviceOnly' | 'whenPasscodeSetThisDeviceOnly'
+export type Accessibility =
+  | 'afterFirstUnlock'
+  | 'afterFirstUnlockThisDeviceOnly'
+  | 'whenUnlocked'
+  | 'whenUnlockedThisDeviceOnly'
+  | 'always'
+  | 'alwaysThisDeviceOnly'
+  | 'whenPasscodeSetThisDeviceOnly';
 
 export const accessibilityOptions: Accessibility[] = [
   'afterFirstUnlock',
@@ -10,22 +17,22 @@ export const accessibilityOptions: Accessibility[] = [
   'whenUnlockedThisDeviceOnly',
   'always',
   'alwaysThisDeviceOnly',
-  'whenPasscodeSetThisDeviceOnly'
+  'whenPasscodeSetThisDeviceOnly',
 ];
 
 /**
  * allows to define how properties can be accessed on iOS
  */
 export interface SetDataOptions {
-  key: string
-  value: string
-  accessibility?: Accessibility
+  key: string;
+  value: string;
+  accessibility?: Accessibility;
 }
 
 export enum WebStorageAdapter {
   LocalStorage = 'LocalStorage',
   SessionStorage = 'SessionStorage',
-  SessionCookie = 'SessionCookie'
+  SessionCookie = 'SessionCookie',
 }
 
 /**
@@ -34,62 +41,62 @@ export enum WebStorageAdapter {
 export interface SecureStoragePlugin {
   /**
    * gets the value for the given key
-   * 
+   *
    * @param options key to get value for
    * @returns value for the given key
    */
-  setStorageAdapter(options: { web: {adapter: WebStorageAdapter} }): Promise<{ value: boolean }>;
+  setStorageAdapter(options: { web: { adapter: WebStorageAdapter } }): Promise<{ value: boolean }>;
 
   /**
    * gets the current storage adapter or null
-   * 
+   *
    * @returns adapter or null
    */
   getStorageAdapter(): Promise<{ adapter: WebStorageAdapter }>;
 
   /**
    * gets the value for the given key
-   * 
+   *
    * @param options key to get value for
    * @returns value for the given key
    */
   get(options: { key: string }): Promise<{ value: string }>;
   /**
    * gets the accessibility for the given key
-   * 
+   *
    * @param options key to get accessibility for
    * @returns accessibility for the given key
    */
-  getAccessibility(options: { key: string }): Promise<{ value: string|undefined }>;
+  getAccessibility(options: { key: string }): Promise<{ value: string | undefined }>;
   /**
    * sets the value for the given key
-   * 
+   *
    * @param options key and value to set
    * @returns true if the value was set successfully
    */
   set(options: SetDataOptions): Promise<{ value: boolean }>;
   /**
    * removes the value for the given key
-   * 
+   *
    * @param options key to remove value for
    * @returns true if the value was removed successfully
    */
   remove(options: { key: string }): Promise<{ value: boolean }>;
   /**
    * clears all values
-   * 
+   *
    * @returns true if all values were removed successfully
    */
   clear(): Promise<{ value: boolean }>;
   /**
    * gets all keys
-   * 
+   *
    * @returns all keys
    */
   keys(): Promise<{ value: string[] }>;
   /**
    * gets the platform
-   * 
+   *
    * @returns the platform
    */
   getPlatform(): Promise<{ value: string }>;

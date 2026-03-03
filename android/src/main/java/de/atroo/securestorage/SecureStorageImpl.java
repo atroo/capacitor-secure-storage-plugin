@@ -3,6 +3,7 @@ package de.atroo.securestorage;
 import android.content.Context;
 
 public class SecureStorageImpl implements SecureStorageInterface {
+
     private SecureStorageInterface preferences = null;
     String preferencesName;
     String encryptedPreferencesName;

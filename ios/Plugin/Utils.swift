@@ -35,4 +35,3 @@ func lowercaseFirstCharacter(of string: String) -> String {
 func getAccessibilityString(accessibility: Accessibility) -> String {
     return lowercaseFirstCharacter(of: accessibility.description)
 }
-

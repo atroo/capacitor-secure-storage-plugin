@@ -5,10 +5,7 @@ import type { Accessibility } from './definitions';
 import { SecureStoragePlugin, WebStorageAdapter } from './definitions';
 import { sessionCookie } from './sessionCookie';
 
-export class SecureStoragePluginWeb
-  extends WebPlugin
-  implements SecureStoragePlugin
-{
+export class SecureStoragePluginWeb extends WebPlugin implements SecureStoragePlugin {
   PREFIX = 'cap_sec_';
   STORAGE_ADAPTER_KEY = 'cap_sec_adapter';
 
@@ -25,9 +22,7 @@ export class SecureStoragePluginWeb
     }
   }
 
-  async setStorageAdapter(options: {
-    web: { adapter: WebStorageAdapter };
-  }): Promise<{ value: boolean }> {
+  async setStorageAdapter(options: { web: { adapter: WebStorageAdapter } }): Promise<{ value: boolean }> {
     localStorage.setItem(this.STORAGE_ADAPTER_KEY, options.web.adapter);
     return {
       value: true,
@@ -87,7 +82,7 @@ export class SecureStoragePluginWeb
   }
   keys(): Promise<{ value: string[] }> {
     const storage = this.getCurrentStorageAdapter();
-    const keys = Object.keys(storage).filter(k => k.indexOf(this.PREFIX) === 0);
+    const keys = Object.keys(storage).filter((k) => k.indexOf(this.PREFIX) === 0);
     return Promise.resolve({ value: keys });
   }
 
